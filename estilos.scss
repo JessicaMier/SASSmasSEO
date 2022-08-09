@@ -1,0 +1,315 @@
+$color:linear-gradient(rgb(156, 168, 185), rgb(53, 35, 211));
+@mixin back {
+    background-size: cover;
+    background-position: center;
+}
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+nav{
+    background-image: $color;
+}
+//incluyendo mixin
+body {
+    background-image: url(media/imagenes/aurora-gfd0a6c3cd_640.jpg);
+    @include back;
+}
+
+//---------------------index------------------------------
+h1 {
+    color: rgb(174, 220, 240);
+    font-size: 50px;
+    text-align: center;
+    font-size: 100px;
+    text-transform: capitalize;
+    margin-top: 50px;
+    text-shadow: 5px 5px 5px black;
+}
+.formulario {
+    text-align: center;
+    font-size: 30px;
+    margin: auto;
+    label {
+        text-transform: capitalize;
+        font-style: italic;
+    }
+    h2 {
+        font-style: italic;
+    }
+}
+.FotoSlide{
+    width: 800px;
+    height: 600px;
+    margin:auto
+}
+//-------------------------vuelos-------------------
+.subtitulo {
+    text-align: center;
+    font-size: 40px;
+    text-transform: capitalize;
+    color: aliceblue;
+    text-shadow: 5px 5px 5px black;
+}
+
+//------------------------------hoteles---------------------------
+td:hover {
+    background-color: rgb(129, 151, 149);
+    color: rgb(8, 8, 8);
+}
+.fotoHotel{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+    .imagen{
+        @include back;
+        height: 200px;
+        width: 200px;
+        margin: 5px;
+       
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px rgb(17, 19, 19);       
+        }
+    .uno{
+        background-image: url(media/imagenes/hotelBarce.jpg);
+    }
+    .dos{
+        background-image: url(media/imagenes/hotelItaly.jpg);
+    }
+    .tres{
+        background-image: url(media/imagenes/hotelPileta.jpg);
+    }
+    .cuatro{
+        background-image: url(media/imagenes/hotelPunta.jpg);
+    }
+    .cinco{
+        background-image: url(media/imagenes/habitacion.jpg);
+    }
+}
+
+//-----------------------------galeria-------------------
+.grilla {
+    min-height: 800px;
+    width: 100%;
+    background: $color;
+    display: grid;
+    padding: 20px;
+    gap: 10px;
+    .item{
+        @include back;
+        border-radius: 7px;
+        box-shadow: 0 0 5px darkslategray;
+        transition: all 0.7s;
+        border: 2px solid black;
+        &:hover{
+            transform: scale(1.05);
+            transition: all 0.7s;  
+            }
+        }
+    .item1 {
+        background-image: url(./media/imagenes/lighthouse-gfe018592d_640.jpg);
+        }
+    .item2 {
+        background-image: url(./media/imagenes/mountains-g23be36dd6_640.jpg);
+    }
+    .item3 {
+        background-image: url(./media/imagenes/playa.jpg);
+    }
+    .item4 {
+        background-image: url(./media/imagenes/tower-gda942c377_640.jpg);
+    }
+    .item5 {
+    background-image: url(./media/imagenes/wales-g5407b7ef6_640.jpg);
+    }
+    .item6 {
+        background-image: url(./media/imagenes/windmill-g7c729566d_640.jpg);
+    }
+    .item7 {
+        background-image: url(./media/imagenes/windmills-g233f5ea9c_640.jpg);
+    }
+    .item8 {
+        background-image: url(./media/imagenes/madrid-g56cc07c46_640.jpg);
+    }
+}
+
+/*-------------------------------------------contacto-------------------------------------------------*/
+
+
+form{
+    input {
+        padding: 5px;
+        font-size: 24px;
+        margin: 5px;
+    }
+
+    label {
+        font-size: 25px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px aliceblue;
+    }
+    h4 {
+        font-size: 30px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px aliceblue;
+    }
+    select {
+        font-size: 15px;
+    }
+}
+/*------------------------------------------------------footer--------------------------------------*/
+footer {
+    color: aliceblue;
+    height: 150px;
+    width: 100%;
+    background: linear-gradient( rgb(53, 35, 211),rgb(156, 168, 185));
+    font-size: 30px;
+    text-align: center;
+    font-weight: bolder;
+    p {
+        font-size: 35px;
+        text-transform: capitalize;
+    }
+    img {
+        height: 40px;
+        width: 40px;
+        padding-left: 5px;
+    }
+}
+    
+
+@media only screen and (min-width:480px) and (max-width:767px){
+    h1{
+        font-size: 35px;
+    }
+    .subtitulo{
+        font-size: 24px;
+    }
+    .grilla{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}
+@media only screen and (min-width:768px) and (max-width:1024px){
+    .grilla{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .item1{
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    .item2{
+        grid-column: 2/3;
+        grid-row: 1/2;    
+    }
+    .item3{
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+    .item4{
+        grid-column: 1/2;
+        grid-row: 2/4 ;
+    }
+    .item5{
+        grid-column:2/3;
+        grid-row: 2/3 ;
+    }
+    .item6{
+        grid-column: 3/4;
+        grid-row: 2/3 ;
+    }       
+    .item7{
+        grid-column:1/2;
+        grid-row: 3/4 ;
+    }
+    .item8{
+        grid-column: 2/4;
+        grid-row: 3/4 ;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .grilla {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+        .item {
+            height: auto;
+        }
+
+        .item1 {
+            grid-column: 1/2;
+            grid-row: 1/3;
+        }
+
+        .item2 {
+            grid-column: 2/3;
+            grid-row: 1/2;
+        }
+
+        .item3 {
+            grid-column: 3/5;
+            grid-row: 1/2;
+        }
+
+        .item4 {
+            grid-column: 2/3;
+            grid-row: 2/4;
+        }
+
+        .item5 {
+             grid-column: 3/4;
+            grid-row: 2/3;
+        }
+
+        .item6 {
+            grid-column: 4/5;
+            grid-row: 2/3;
+        }
+
+        .item7 {
+            grid-column: 1/2;
+            grid-row: 3/4;
+        }
+
+        .item8 {
+            grid-column: 3/5;
+            grid-row: 3/4;
+        }
+    }
+}
+//incluyendo extend
+.promoNueva {
+    @extend .subtitulo;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.promociones {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+$promos: (20px: blue,
+    22px: black,
+    24px: aliceblue,
+);
+/*------------------------------mapa--------------------*/
+@each $size,
+$colores in $promos {
+    .promo-#{$colores} {
+        color: $colores;
+        background-color: rgb(132, 125, 161);
+        height: 250px;
+        width: 250px;
+        border: 5px solid $colores;
+        text-align: center;
+        text-transform: capitalize;
+        font-size: $size;
+        padding-top: 30px;
+        margin-bottom: 30px;
+    }
+}
